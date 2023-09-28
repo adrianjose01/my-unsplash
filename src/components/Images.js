@@ -14,7 +14,7 @@ const Images = ({ filter }) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8000/images/")
+    fetch("https://my-unsplash-backend-zb76.onrender.com/images/")
       .then((res) => res.json())
       .then((data) => {
         setImages(data.images);

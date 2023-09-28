@@ -10,7 +10,7 @@ const AddNewModal = ({ setIsOpen }) => {
     const imageUrl = imageUrlRef.current.value;
     const password = passwordRef.current.value;
 
-    fetch("http://localhost:8000/images", {
+    fetch("https://my-unsplash-backend-zb76.onrender.com/images", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -6,7 +6,7 @@ const DeleteImage = ({ setIsOpen, imageId }) => {
   const handleDeleteImage = () => {
     const password = passwordRef.current.value;
 
-    fetch(`http://localhost:8000/images/${imageId}`, {
+    fetch(`https://my-unsplash-backend-zb76.onrender.com/images/${imageId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
