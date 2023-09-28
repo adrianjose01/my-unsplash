@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import dividirArrayEnTres from "../separateArray";
 import Modal from "./Modal";
 import DeleteImage from "./DeleteImage";
+import backendUrl from "../backend-url";
 
 const Images = ({ filter }) => {
   const [photoId, setPhotoId] = useState();
@@ -14,7 +15,7 @@ const Images = ({ filter }) => {
   };
 
   useEffect(() => {
-    fetch("https://my-unsplash-backend-zb76.onrender.com/images/")
+    fetch(backendUrl + "/images/")
       .then((res) => res.json())
       .then((data) => {
         setImages(data.images);

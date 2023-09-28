@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import backendUrl from "../backend-url";
 
 const AddNewModal = ({ setIsOpen }) => {
   const labelRef = useRef();
@@ -10,7 +11,7 @@ const AddNewModal = ({ setIsOpen }) => {
     const imageUrl = imageUrlRef.current.value;
     const password = passwordRef.current.value;
 
-    fetch("https://my-unsplash-backend-zb76.onrender.com/images", {
+    fetch(backendUrl + "/images", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

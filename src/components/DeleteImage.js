@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import backendUrl from "../backend-url";
 
 const DeleteImage = ({ setIsOpen, imageId }) => {
   const passwordRef = useRef();
@@ -6,7 +7,7 @@ const DeleteImage = ({ setIsOpen, imageId }) => {
   const handleDeleteImage = () => {
     const password = passwordRef.current.value;
 
-    fetch(`https://my-unsplash-backend-zb76.onrender.com/images/${imageId}`, {
+    fetch(backendUrl + "/images/" + imageId, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
