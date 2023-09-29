@@ -153,6 +153,38 @@ header {
   background: rgb(235, 34, 34);
 }
 
+.loading {
+  height: 10px;
+  width: 18rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.loading-bar {
+  height: 10px;
+  width: 7rem;
+  background-color: rgb(54, 91, 212);
+  border-radius: 8px;
+  position: relative;
+  top: -0.6rem;
+  animation-name: loading;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(0rem);
+  }
+  50% {
+    transform: translateX(11rem);
+  }
+  100% {
+    transform: translateX(0rem);
+  }
+}
+
 @media (max-width: 680px) {
   .image-container {
     grid-template-columns: repeat(1, minmax(0, 1fr));
