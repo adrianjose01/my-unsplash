@@ -6,8 +6,10 @@ const DeleteImage = ({ setIsOpen, imageId }) => {
   const passwordRef = useRef();
 
   const handleDeleteImage = async () => {
-    setIsLoading(true);
     const password = passwordRef.current.value;
+
+    if (password.length < 5) return alert("Llene los espacios correctamente");
+    setIsLoading(true);
 
     try {
       const response = await fetch(backendUrl + "/images/" + imageId, {
@@ -33,7 +35,12 @@ const DeleteImage = ({ setIsOpen, imageId }) => {
           {" "}
           <h2 className="modal-title">Are you sure?</h2>
           <p className="modal-label">password:</p>
-          <input ref={passwordRef} className="input-modal" type="password" />
+          <input
+            ref={passwordRef}
+            className="input-modal"
+            type="password"
+            id="password-check"
+          />
           <div style={{ textAlign: "end" }}>
             <button
               className="modal-cancel-button"

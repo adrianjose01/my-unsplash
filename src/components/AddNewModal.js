@@ -8,10 +8,13 @@ const AddNewModal = ({ setIsOpen }) => {
   const passwordRef = useRef();
 
   const handleAddImage = async () => {
-    setIsLoading(true);
     const label = labelRef.current.value;
     const imageUrl = imageUrlRef.current.value;
     const password = passwordRef.current.value;
+
+    if (label === "" || password.length < 5)
+      return alert("Complete correctamente los espacios");
+    setIsLoading(true);
 
     try {
       const response = await fetch(backendUrl + "/images", {
@@ -36,11 +39,26 @@ const AddNewModal = ({ setIsOpen }) => {
         <>
           <h2 className="modal-title">Add a new photo</h2>
           <p className="modal-label">Label:</p>
-          <input ref={labelRef} className="input-modal" type="text" />
+          <input
+            ref={labelRef}
+            className="input-modal"
+            type="text"
+            id="label"
+          />
           <p className="modal-label">Photo URL:</p>
-          <input ref={imageUrlRef} className="input-modal" type="text" />
+          <input
+            ref={imageUrlRef}
+            className="input-modal"
+            type="text"
+            id="imageUrl"
+          />
           <p className="modal-label">Password:</p>
-          <input ref={passwordRef} className="input-modal" type="password" />
+          <input
+            ref={passwordRef}
+            className="input-modal"
+            type="password"
+            id="password"
+          />
           <div style={{ textAlign: "end" }}>
             <button
               className="modal-cancel-button"
