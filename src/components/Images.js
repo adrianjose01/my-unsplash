@@ -42,7 +42,7 @@ const Images = ({ filter }) => {
               <figure key={i} className="image-container-figure">
                 <div className="delete-image-container">
                   <button
-                    id={img.imageUrl}
+                    id={img._id}
                     onClick={() => handleClickOnDeleteBtn(img._id)}
                     className="image-container--delete_item"
                   >
